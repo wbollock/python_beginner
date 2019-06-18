@@ -1,6 +1,8 @@
-#!python3
+#! python3
 
 #phone regex
+# pip install re
+# pip install pyperclip
 import pyperclip,re
 phoneRegex = re.compile(r'''(
     (\d{3}|\(\d{3}\))? #area code
@@ -10,7 +12,7 @@ phoneRegex = re.compile(r'''(
     (\d{4}) #last 4 digits
     (\s*(ext|x|ext.)\s*(\d{2,5}))? # extension
 )''', re.VERBOSE)
-# TODO: Create email regex
+# Create email regex
 
 emailRegex = re.compile(r'''(
     [a-zA-Z0-9._%+-]+  # username
@@ -20,7 +22,7 @@ emailRegex = re.compile(r'''(
 )''', re.VERBOSE)
 
 
-# TODO: Find matches in clipboard text.
+# Find matches in clipboard text.
 text = str(pyperclip.paste())
 
 matches = []
